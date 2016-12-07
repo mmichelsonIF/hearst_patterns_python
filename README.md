@@ -14,6 +14,15 @@ Installation:
 
 pip install hearstPatterns
 
+Installation notes:
+
+Some users report needing to install specific components of NLTK after the inital install. Specifically, you might need to:
+
+```
+>> nltk.download('punkt')
+>> nltk.download('averaged_perceptron_tagger')
+```
+
 Testing:
 
 python -m unittest discover
