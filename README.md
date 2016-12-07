@@ -12,20 +12,26 @@ to do the Part-of-Speech tagging. Therefore, there is a requirement on nltk (see
 
 Installation:
 
+```
 pip install hearstPatterns
+```
 
 Installation notes:
 
 Some users report needing to install specific components of NLTK after the inital install. Specifically, you might need to:
 
 ```
+$ python
+>>> import nltk
 >> nltk.download('punkt')
 >> nltk.download('averaged_perceptron_tagger')
 ```
 
 Testing:
 
+```
 python -m unittest discover
+```
 
 ToDo:
 
