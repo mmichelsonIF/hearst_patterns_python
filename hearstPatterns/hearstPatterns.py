@@ -1,6 +1,7 @@
 import re
 import string
 import nltk
+from nltk.tag.perceptron import PerceptronTagger
 
 class HearstPatterns(object):
 
@@ -25,10 +26,12 @@ class HearstPatterns(object):
 			("(NP_\w+ (, )?especially (NP_\w+ ?(, )?(and |or )?)+)", "first"),
 		]
 
+		self.__pos_tagger = PerceptronTagger()
+		
 	def prepare(self, rawtext):
 		sentences = nltk.sent_tokenize(rawtext.strip()) # NLTK default sentence segmenter
 		sentences = [nltk.word_tokenize(sent) for sent in sentences] # NLTK word tokenizer
-		sentences = [nltk.pos_tag(sent) for sent in sentences] # NLTK POS tagger
+		sentences = [self.__pos_tagger.tag(sent) for sent in sentences] # NLTK POS tagger
 
 		return sentences
 
