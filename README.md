@@ -1,4 +1,4 @@
-An implementation of Hearst patterns for hyponyms in Python. [1]
+An implementation of Hearst patterns for hyponyms in Python. [1] Now, extended to include more patterns from [2]!
 
 I couldn't find a version in Python, so I wrote and released this one.
 
@@ -42,4 +42,6 @@ ToDo:
 ====
 References:
 
-[1] Hearst, Marti A. "Automatic acquisition of hyponyms from large text corpora." Proceedings of the 14th conference on Computational linguistics-Volume 2. Association for Computational Linguistics, 1992.
+[1] Hearst, M. A. "Automatic acquisition of hyponyms from large text corpora." Proceedings of the 14th conference on Computational linguistics-Volume 2. Association for Computational Linguistics, 1992.
+
+[2] Seitner, J., Bizer, C., Eckert, K., Faralli, S., Meusel, R., Paulheim, H., & Ponzetto, S. "A large database of hypernymy relations extracted from the web." Proceedings of the 10th edition of the Language Resources and Evaluation Conference, 2016.
