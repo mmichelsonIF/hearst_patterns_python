@@ -1,5 +1,11 @@
 An implementation of Hearst patterns for hyponyms in Python. [1] Now, extended to include more patterns from [2]!
 
+To use the extended patterns, you initialize the constructor and set the extended paramter to True
+
+```
+h = HearstPatterns(extended = True)
+```
+
 I couldn't find a version in Python, so I wrote and released this one.
 
 The core API call is find_hyponyms(text) which will process the text and return the hyponyms in a list of tuples,
