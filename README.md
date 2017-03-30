@@ -1,6 +1,6 @@
 An implementation of Hearst patterns for hyponyms in Python. [1] Now, extended to include more patterns from [2]!
 
-To use the extended patterns, you initialize the constructor and set the extended paramter to True
+By default, the library does not use the extended patterns (so it behaves like "classic" Hearst patterns). If you do want to use the extended pattern set, you initialize the constructor and set the extended paramter to True
 
 ```
 h = HearstPatterns(extended = True)
