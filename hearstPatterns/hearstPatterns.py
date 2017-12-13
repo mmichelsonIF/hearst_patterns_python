@@ -94,7 +94,7 @@ class HearstPatterns(object):
         for sentence in sentences:
             chunks = self.__np_chunker.parse(sentence) # parse the example sentence
             #for chunk in chunks:
-            #   print str(chunk)
+            #   print(str(chunk))
             all_chunks.append(self.prepare_chunks(chunks))
         return all_chunks
 
@@ -154,11 +154,11 @@ class HearstPatterns(object):
                     else:
                         general = nps[-1]
                         specifics = nps[:-1]
-                        print str(general)
-                        print str(nps)
+                        print(str(general))
+                        print(str(nps))
 
                     for i in range(len(specifics)):
-                        #print "%s, %s" % (specifics[i], general)
+                        #print("%s, %s" % (specifics[i], general))
                         hyponyms.append((self.clean_hyponym_term(specifics[i]), self.clean_hyponym_term(general)))
 
         return hyponyms
