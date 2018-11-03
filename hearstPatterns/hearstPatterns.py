@@ -123,6 +123,22 @@ class HearstPatterns(object):
                 terms.append(np)
         return ' '.join(terms)
 
+    def replace_np_sequences(self, sentence):
+        words = ""
+        first_word_in_sequence = False
+        for word in nltk.word_tokenize(sentence.replace("NP_", "_")):
+            if word[0] == "_":
+                if not first_word_in_sequence:
+                    word = "NP" + word
+                    first_word_in_sequence = True
+                    words = words + " " + word
+                else:
+                    words += word
+            else:
+                words = words + " " + word
+                first_word_in_sequence = False
+        return words.strip()
+
     """
         This is the main entry point for this code.
         It takes as input the rawtext to process and returns a list of tuples (specific-term, general-term)
@@ -139,7 +155,7 @@ class HearstPatterns(object):
 
             # find any N consecutive NP_ and merge them into one...
             # So, something like: "NP_foo NP_bar blah blah" becomes "NP_foo_bar blah blah"
-            sentence = re.sub(r"(NP_\w+ NP_\w+)+", lambda m: m.expand(r'\1').replace(" NP_", "_"), raw_sentence)
+            sentence = self.replace_np_sequences(raw_sentence)
 
             for (hearst_pattern, parser) in self.__hearst_patterns:
                 matches = re.search(hearst_pattern, sentence)

@@ -31,5 +31,10 @@ class TestHearstPatterns(unittest.TestCase):
 		self.assertEqual(hyps5[1], ("England", "countries"))
 		self.assertEqual(hyps5[2], ("Spain", "countries"))
 
+		hyps6 = h.find_hyponyms("There are such benefits as postharvest losses reduction, food increase and soil fertility improvement.")
+		self.assertEqual(hyps6[0], ("postharvest losses reduction", "benefits"))
+		self.assertEqual(hyps6[1], ("food increase", "benefits"))
+		self.assertEqual(hyps6[2], ("soil fertility improvement", "benefits"))
+
 if __name__ == '__main__':
     unittest.main()
