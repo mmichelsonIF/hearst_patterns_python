@@ -9,19 +9,19 @@ h = HearstPatterns(extended = True)
 The core API call is find_hyponyms(text) which will process the text and return the hyponyms in a list of tuples,
 of the form (specific-term, general-term)
 
-Installation:
+# Installation:
 
 ```
 pip install hearstPatterns
 ```
 
-Installation notes:
+# Installation notes:
 
-* As of version 0.1.3:
+## As of version 0.1.3:
 
 The library now uses Spacy, so if you are using a prior version, please see the NLTK specific instructions below.
 
-* Versin 0.1.2 and below:
+## Versin 0.1.2 and below:
 
 Note that Hearst patterns rely on Noun Phrases, so we build our own simple chunker, and therefore leverage NLTK in order
 to do the Part-of-Speech tagging. Therefore, there is a requirement on nltk (see requirements.txt)
@@ -35,14 +35,14 @@ $ python
 >> nltk.download('averaged_perceptron_tagger')
 ```
 
-Testing:
+# Testing:
 
 ```
 python -m unittest discover
 ```
 
 ====
-References:
+# References:
 
 [1] Hearst, M. A. "Automatic acquisition of hyponyms from large text corpora." Proceedings of the 14th conference on Computational linguistics-Volume 2. Association for Computational Linguistics, 1992.
 
