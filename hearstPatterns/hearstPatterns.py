@@ -80,7 +80,7 @@ class HearstPatterns(object):
                 chunk_lemma = " ".join(chunk_arr)
                 replacement_value = "NP_"+"_".join(chunk_arr)
                 if chunk_lemma:
-                    sentence_text = sentence_text.replace(chunk_lemma, replacement_value)
+                    sentence_text = re.sub(r'\b%s\b' % re.escape(chunk_lemma), replacement_value, sentence_text)
             chunks.append(sentence_text)
         return chunks
 
