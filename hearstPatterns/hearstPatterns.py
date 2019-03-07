@@ -79,7 +79,8 @@ class HearstPatterns(object):
                     chunk_arr.append(token.lemma_)
                 chunk_lemma = " ".join(chunk_arr)
                 replacement_value = "NP_"+"_".join(chunk_arr)
-                sentence_text = sentence_text.replace(chunk_lemma, replacement_value)
+                if chunk_lemma:
+                    sentence_text = sentence_text.replace(chunk_lemma, replacement_value)
             chunks.append(sentence_text)
         return chunks
 
