@@ -72,15 +72,20 @@ class HearstPatterns(object):
             sentence_text = sentence.lemma_
             for chunk in sentence.noun_chunks:
                 chunk_arr = []
+                replace_arr = []
                 for token in chunk:
-                    # Ignore Punctuation and stopword adjectives (generally quantifiers of plurals)
-                    if token.is_punct or token.lemma_ in self.__adj_stopwords:
-                        continue
                     chunk_arr.append(token.lemma_)
-                chunk_lemma = " ".join(chunk_arr)
-                replacement_value = "NP_"+"_".join(chunk_arr)
+                    # Remove punctuation and stopword adjectives (generally quantifiers of plurals)
+                    if token.lemma_.isalnum() and token.lemma_ not in self.__adj_stopwords:
+                        replace_arr.append(token.lemma_)
+                    elif not token.lemma_.isalnum():
+                        replace_arr.append(''.join(char for char in token.lemma_ if char.isalnum()))
+                chunk_lemma = ' '.join(chunk_arr)
+                replacement_value = 'NP_' + '_'.join(replace_arr)
                 if chunk_lemma:
-                    sentence_text = re.sub(r'\b%s\b' % re.escape(chunk_lemma), replacement_value, sentence_text)
+                    sentence_text = re.sub(r'\b%s\b' % re.escape(chunk_lemma),
+                                           r'%s' % replacement_value,
+                                           sentence_text)
             chunks.append(sentence_text)
         return chunks
 
