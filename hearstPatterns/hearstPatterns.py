@@ -9,7 +9,7 @@ class HearstPatterns(object):
 
         # now define the Hearst patterns
         # format is <hearst-pattern>, <general-term>
-        # so, what this means is that if you apply the first pattern, the firsr Noun Phrase (NP)
+        # so, what this means is that if you apply the first pattern, the first Noun Phrase (NP)
         # is the general one, and the rest are specific NPs
         self.__hearst_patterns = [
             ('(NP_\\w+ (, )?such as (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
@@ -33,7 +33,7 @@ class HearstPatterns(object):
                 ('example of (NP_\\w+ (, )?be (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
                 ('((NP_\\w+ ?(, )?)+(and |or )?be example of NP_\\w+)', 'last'),
                 ('(NP_\\w+ (, )?for example (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
-                ('((NP_\\w+ ?(, )?)+(and |or )?wich be call NP_\\w+)', 'last'),
+                ('((NP_\\w+ ?(, )?)+(and |or )?which be call NP_\\w+)', 'last'),
                 ('((NP_\\w+ ?(, )?)+(and |or )?which be name NP_\\w+)', 'last'),
                 ('(NP_\\w+ (, )?mainly (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
                 ('(NP_\\w+ (, )?mostly (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
