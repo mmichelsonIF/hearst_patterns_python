@@ -80,6 +80,8 @@ class HearstPatterns(object):
                         replace_arr.append(token.lemma_)
                     elif not token.lemma_.isalnum():
                         replace_arr.append(''.join(char for char in token.lemma_ if char.isalnum()))
+                if len(chunk_arr) == 0:
+                    chunk_arr.append(chunk[-1].lemma_)
                 chunk_lemma = ' '.join(chunk_arr)
                 replacement_value = 'NP_' + '_'.join(replace_arr)
                 if chunk_lemma:
