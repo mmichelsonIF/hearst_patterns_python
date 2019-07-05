@@ -45,9 +45,9 @@ class HearstPatterns(object):
                 ('(NP_\\w+ (, )?other than (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
                 ('(NP_\\w+ (, )?e.g. (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
                 ('(NP_\\w+ (, )?i.e. (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
-                ('((NP_\\w+ ?(, )?)+(and |or )?a kind of NP_\\w+)', 'last'),
-                ('((NP_\\w+ ?(, )?)+(and |or )?kind of NP_\\w+)', 'last'),
-                ('((NP_\\w+ ?(, )?)+(and |or )?form of NP_\\w+)', 'last'),
+                ('((NP_\\w+ ?(, )?)+(and|or)? a kind of NP_\\w+)', 'last'),
+                ('((NP_\\w+ ?(, )?)+(and|or)? kind of NP_\\w+)', 'last'),
+                ('((NP_\\w+ ?(, )?)+(and|or)? form of NP_\\w+)', 'last'),
                 ('((NP_\\w+ ?(, )?)+(and |or )?which look like NP_\\w+)', 'last'),
                 ('((NP_\\w+ ?(, )?)+(and |or )?which sound like NP_\\w+)', 'last'),
                 ('(NP_\\w+ (, )?which be similar to (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
@@ -60,7 +60,7 @@ class HearstPatterns(object):
                 ('(NP_\\w+ (, )?among -PRON- (NP_\\w+ ? (, )?(and |or )?)+)', 'first'),
                 ('((NP_\\w+ ?(, )?)+(and |or )?as NP_\\w+)', 'last'),
                 ('(NP_\\w+ (, )? (NP_\\w+ ? (, )?(and |or )?)+ for instance)', 'first'),
-                ('((NP_\\w+ ?(, )?)+(and |or )?sort of NP_\\w+)', 'last')
+                ('((NP_\\w+ ?(, )?)+(and|or)? sort of NP_\\w+)', 'last')
             ])
 
         self.__spacy_nlp = spacy.load('en')
