@@ -1,5 +1,5 @@
 import unittest
-from hearstPatterns import HearstPatterns
+from hearstPatterns.hearstPatterns import HearstPatterns
 
 
 class TestHearstPatterns(unittest.TestCase):
@@ -57,12 +57,34 @@ class TestHearstPatterns(unittest.TestCase):
         self.assertEqual(tuple(map(str.lower, hyps7[2])), ("orange", "fruit"))
         self.assertEqual(tuple(map(str.lower, hyps7[3])), ("peach", "fruit"))
 
+        # H'2
+
+        hyps10 = h.find_hyponyms("Fruits (e.g. apples, bananas, oranges and peaches.)")
+        self.assertEqual(tuple(map(str.lower, hyps10[0])), ("apple", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps10[1])), ("banana", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps10[2])), ("orange", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps10[3])), ("peach", "fruit"))
+
+        hyps10 = h.find_hyponyms("Fruits (i.e. apples, bananas, oranges and peaches.)")
+        self.assertEqual(tuple(map(str.lower, hyps10[0])), ("apple", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps10[1])), ("banana", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps10[2])), ("orange", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps10[3])), ("peach", "fruit"))
+
         # H'3
-        hyps8 = h.find_hyponyms("Fruits, for example, apples, bananas, oranges and peaches.")
-        self.assertEqual(tuple(map(str.lower, hyps7[0])), ("apple", "fruit"))
-        self.assertEqual(tuple(map(str.lower, hyps7[1])), ("banana", "fruit"))
-        self.assertEqual(tuple(map(str.lower, hyps7[2])), ("orange", "fruit"))
-        self.assertEqual(tuple(map(str.lower, hyps7[3])), ("peach", "fruit"))
+        hyps8 = h.find_hyponyms("Fruits, for example apples, bananas, oranges and peaches.")
+        self.assertEqual(tuple(map(str.lower, hyps8[0])), ("apple", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps8[1])), ("banana", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps8[2])), ("orange", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps8[3])), ("peach", "fruit"))
+
+        # H'4
+        hyps9 = h.find_hyponyms("Fruits, which may include apples, bananas, oranges and peaches.")
+        self.assertEqual(tuple(map(str.lower, hyps9[0])), ("apple", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps9[1])), ("banana", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps9[2])), ("orange", "fruit"))
+        self.assertEqual(tuple(map(str.lower, hyps9[3])), ("peach", "fruit"))
+
 
 if __name__ == '__main__':
     unittest.main()

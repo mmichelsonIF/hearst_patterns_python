@@ -85,8 +85,8 @@ class HearstPatterns(object):
                     'last'
                 ),
                 (
-                    'example of (NP_\\w+ (, )?be (NP_\\w+ ? \
-                    (, )?(and |or )?)+)',
+                    'example of (NP_\\w+ (, )?be (NP_\\w+ ? '
+                    '(, )?(and |or )?)+)',
                     'first'
                 ),
                 (
@@ -94,7 +94,8 @@ class HearstPatterns(object):
                     'last'
                 ),
                 (
-                    '(NP_\\w+ (, )?for example (NP_\\w+ ? (, )?(and |or )?)+)',
+                    '(NP_\\w+ (, )?for example (, )?'
+                    '(NP_\\w+ ?(, )?(and |or )?)+)',
                     'first'
                 ),
                 (
@@ -118,8 +119,8 @@ class HearstPatterns(object):
                     'first'
                 ),
                 (
-                    '(NP_\\w+ (, )?particularly (NP_\\w+ ? \
-                    (, )?(and |or )?)+)',
+                    '(NP_\\w+ (, )?particularly (NP_\\w+ ? '
+                    '(, )?(and |or )?)+)',
                     'first'
                 ),
                 (
@@ -127,8 +128,8 @@ class HearstPatterns(object):
                     'first'
                 ),
                 (
-                    '(NP_\\w+ (, )?in particular (NP_\\w+ ? \
-                    (, )?(and |or )?)+)',
+                    '(NP_\\w+ (, )?in particular (NP_\\w+ ? '
+                    '(, )?(and |or )?)+)',
                     'first'
                 ),
                 (
@@ -141,6 +142,11 @@ class HearstPatterns(object):
                 ),
                 (
                     '(NP_\\w+ (, )?e.g. (, )?(NP_\\w+ ? (, )?(and |or )?)+)',
+                    'first'
+                ),
+                (
+                    '(NP_\\w+ \\( (e.g.|i.e.) (, )?(NP_\\w+ ? (, )?(and |or )?)+'
+                    '(\\. )?\\))',
                     'first'
                 ),
                 (
@@ -168,13 +174,13 @@ class HearstPatterns(object):
                     'last'
                 ),
                 (
-                    '(NP_\\w+ (, )?which be similar to (NP_\\w+ ? \
-                    (, )?(and |or )?)+)',
+                    '(NP_\\w+ (, )?which be similar to (NP_\\w+ ? '
+                    '(, )?(and |or )?)+)',
                     'first'
                 ),
                 (
-                    '(NP_\\w+ (, )?example of this be (NP_\\w+ ? \
-                    (, )?(and |or )?)+)',
+                    '(NP_\\w+ (, )?example of this be (NP_\\w+ ? '
+                    '(, )?(and |or )?)+)',
                     'first'
                 ),
                 (
@@ -198,8 +204,8 @@ class HearstPatterns(object):
                     'first'
                 ),
                 (
-                    '(NP_\\w+ (, )?among -PRON- (NP_\\w+ ? \
-                    (, )?(and |or )?)+)',
+                    '(NP_\\w+ (, )?among -PRON- (NP_\\w+ ? '
+                    '(, )?(and |or )?)+)',
                     'first'
                 ),
                 (
@@ -207,13 +213,18 @@ class HearstPatterns(object):
                     'last'
                 ),
                 (
-                    '(NP_\\w+ (, )? (NP_\\w+ ? (, )?(and |or )?)+ \
-                    for instance)',
+                    '(NP_\\w+ (, )? (NP_\\w+ ? (, )?(and |or )?)+ '
+                    'for instance)',
                     'first'
                 ),
                 (
                     '((NP_\\w+ ?(, )?)+(and|or)? sort of NP_\\w+)',
                     'last'
+                ),
+                (
+                    '(NP_\\w+ (, )?which may include (NP_\\w+ '
+                    '?(, )?(and |or )?)+)',
+                    'first'
                 )
             ])
 
