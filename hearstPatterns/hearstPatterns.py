@@ -238,8 +238,8 @@ class HearstPatterns(object):
             for chunk in sentence.noun_chunks:
                 if chunk.lemma_.lower() == "example":
                     start = chunk.start
-                    pre_token = sentence[start - 1].lemma_.lower()
-                    post_token = sentence[start + 1].lemma_.lower()
+                    pre_token = doc[start - 1].lemma_.lower()
+                    post_token = doc[start + 1].lemma_.lower()
                     if start > 0 and\
                             (pre_token == "for" or post_token == "of"):
                         continue
