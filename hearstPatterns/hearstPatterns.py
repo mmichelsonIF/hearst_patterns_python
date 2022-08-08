@@ -228,7 +228,7 @@ class HearstPatterns(object):
                 )
             ])
 
-        self.__spacy_nlp = spacy.load('en')
+        self.__spacy_nlp = spacy.load('en_core_web_sm')
 
     def chunk(self, rawtext):
         doc = self.__spacy_nlp(rawtext)
